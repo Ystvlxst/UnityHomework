@@ -35,8 +35,8 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float scaleEnemyX = 0.31f;
-        float scaleEnemyY = 0.28f;
+        float scaleX = 0.31f;
+        float scaleY = 0.28f;
         Transform target = _points[_currentPoint];
         transform.position = Vector2.MoveTowards(transform.position, target.position, _speed * Time.deltaTime);
 
