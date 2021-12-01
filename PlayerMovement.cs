@@ -22,15 +22,15 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         float jumpForse = 0.15f;
-        float scalePlayerX = 1f;
-        float scalePlayerY = 1f;
+        float scaleX = 1f;
+        float scaleY = 1f;
 
         if (Input.GetKey(KeyCode.A))
         {
             _animator.SetBool(AnimatorPlayerController.Params.IsRunning, true);
             transform.Translate(_maxSpeed * Time.deltaTime * -1, 0, 0);
 
-            transform.localScale = new Vector2(scalePlayerX, scalePlayerY);
+            transform.localScale = new Vector2(scaleX, scaleY);
         }
         else if (Input.GetKey(KeyCode.D))
         {
