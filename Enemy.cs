@@ -10,8 +10,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private Transform _path;
 
-    private Collider2D _collider2D;
-    private Rigidbody2D _rigidbody2;
+    private Collider2D _collider;
+    private Rigidbody2D _rigidbody;
     private Animator _animator;
     private Transform[] _points;
 
@@ -19,8 +19,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        _collider2D = GetComponent<Collider2D>();
-        _rigidbody2 = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<Collider2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
 
         _points = new Transform[_path.childCount];
@@ -44,13 +44,13 @@ public class Enemy : MonoBehaviour
         {
             _currentPoint++;
 
-            transform.localScale = new Vector2(scaleEnemyX, scaleEnemyY);
+            transform.localScale = new Vector2(scaleX, scaleEY);
 
             if (_currentPoint >= _points.Length)
             {
                 _currentPoint = 0;
 
-                transform.localScale = new Vector2(-scaleEnemyX, scaleEnemyY);
+                transform.localScale = new Vector2(-scaleX, scaleY);
             }
         }
     }
